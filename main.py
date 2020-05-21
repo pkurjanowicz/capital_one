@@ -20,13 +20,15 @@ def find_total(card_number):
     for row in reader:
       if row[card_number_column_name] == card_number and row[debit_column_name] != '' and reader.line_num < get_credit_line():
         total += float(row[debit_column_name])
-        
+      if row[card_number_column_name] == card_number and row[credit_column_name] != '' and reader.line_num < get_credit_line():
+        total -= float(row[credit_column_name])
+
     return truncate(total)
 
 
 pete_balance = find_total(pete_card)
 jess_balance = find_total(jess_card)
-total_balance = pete_balance + jess_balance
+total_balance = truncate(pete_balance + jess_balance)
 
 
 print('''

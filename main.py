@@ -14,7 +14,7 @@ def get_credit_line():
 
 
 def find_total(card_number):
-  with open('./sheets/test.csv', newline='') as csvfile:
+  with open('./sheets/{}'.format(recent_sheet), newline='') as csvfile:
     reader = csv.DictReader(csvfile)
     total = 0
     for row in reader:
@@ -36,6 +36,5 @@ Total Balance: {}
 '''.format(pete_balance,jess_balance, total_balance )
 )
 
-# print(creation_date('./sheets/{}'.format(csv_name)))
 
 

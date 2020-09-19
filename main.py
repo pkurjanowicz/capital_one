@@ -25,9 +25,10 @@ def find_total(card_number):
 
     return truncate(total)
 
-
-pete_balance = find_total(pete_card)
-jess_balance = find_total(jess_card)
+move_to_pete = float(input("Move money from Jess to Pete: "))
+move_to_jess = float(input("Move money from Pete to Jess: "))
+pete_balance = truncate(find_total(pete_card) - move_to_jess + move_to_pete)
+jess_balance = truncate(find_total(jess_card) + move_to_jess - move_to_pete)
 total_balance = truncate(pete_balance + jess_balance)
 
 

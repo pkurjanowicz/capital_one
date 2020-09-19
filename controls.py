@@ -25,7 +25,7 @@ def creation_date(path_to_file):
 
 jess_card = '0717'
 pete_card = '9246'
-last_statement_min = 2000 
+last_statement_min = 1900 
 credit_column_name = 'Credit'
 debit_column_name = 'Debit'
 card_number_column_name = 'Card No.'
